@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pengumuman Kelulusan SD Negeri 2 Passo 2024/2025</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      margin-top: 80px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #2980b9;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Pengumuman Kelulusan</h1>
+    <p>SD Negeri 2 Passo<br>Tahun Pelajaran 2024/2025</p>
+    <input type="text" id="nisn" placeholder="Masukkan NISN Anda" />
+    <button onclick="cekKelulusan()">Lihat Hasil</button>
+    <div class="result" id="hasil"></div>
+  </div>
+
+  <script>
+    const dataSiswa = {
+      "0129215000": "ALDRIANO OBETNEGO TEHUPURING",
+      "3136144063": "ALEXANDER D. J. LAINSAMPUTTY",
+      "3139472503": "ALIKA MICHELLE MARWELIA MAATOKE",
+      "0134211019": "ALLMENDO STENLY IMANUEL HURSEPUNY",
+      "0127179018": "ANDREA LOIS TALAHATU",
+      "0123528614": "ARCHYVITHO NOVELO SAHERTIAN",
+      "0139604625": "ARLES LIRMAMANA",
+      "0138883152": "ARSEN MARTJAN LALIHATU",
+      "3137077919": "AXELSEN FREDLY RUHUPATTY",
+      "0132075696": "BRILLIAN  MURIOLKOSSU",
+      "0139901031": "CENSIA  CLARIS MANUKILEJ",
+      "0138248444": "DENEVA WESLEY MAITIMU",
+      "3134297141": "DILAN PATTILEAMONIA",
+      "3137742739": "DWIGHT JESAYA APALEM",
+      "0126571674": "DWILJIO KURNIAWAN BAKKER",
+      "0114820193": "FALENCIA ATUA",
+      "0137943045": "FIDELA FERIS RINSAMPESSY",
+      "3132316269": "FIDELIA RIRY",
+      "0133066977": "GIAN RODRIGO HURSEPUNY",
+      "3131404791": "GIOVANO TEHUSALAWANY",
+      "0132832821": "GLADYS PATTIPEILOHY",
+      "0136488622": "GRACIO YAHYA PINOA",
+      "0133543806": "HOLLY HAZELTON ISAKQUELLA HUWAE",
+      "0132391316": "IMANUEL ADRIAN LATUPELLA",
+      "0139290210": "JANETTE MAVES NANLOHY",
+      "0131049776": "JEMY MARQUEZ TUHALAURUW",
+      "0138759177": "JISELA RAHARUSUN",
+      "3138779072": "JISRAEL CESTER  HAMBALI",
+      "0134065803": "JOEL JOY TALIB",
+      "3135338847": "JUNY RINSAMPESSY",
+      "0113979296": "KLIF MARIO  TAHAPARY",
+      "0126655608": "LAUFINSKY CHRISTLIAM LIMAHELU",
+      "0137097726": "MIGUEL TANAHITUMESSING",
+      "3138409911": "NATHALIA PATTIKAWA",
+      "3112065667": "NOVEL CLIV LAHUMETEN",
+      "3132268406": "NOWELLA  LEUNORA  LEUWOL",
+      "3131832801": "PIETER  MILAN  HORSAIR",
+      "0131870284": "QUINN GRIFFITH LATUMAERISSA",
+      "3138936677": "RAPHAEL ANDJELO PATTINAMA",
+      "0124763110": "RIZELDO JUNIOR APONNO",
+      "0121562793": "SELVIANA  LAIMBORBIR",
+      "3135525448": "TRIFENA TESALONIKA PATTIAPON",
+      "0136060911": "TRYSTAN MARTIO HEZKIEL RINSAMPESSY",
+      "0123875861": "VALERY   VADELIA  BREFLLY",
+      "3131543677": "VIDELYA EVELYN HURSEPUNY",
+      "3123034241": "VIOLETTA DAPHNE IZAAC",
+      "3121358690": "WILSON IZAAC WERINUSSA",
+      "0138916586": "YUNIQUE YAMWAV",
+      "3122912502": "ZIKQUEN SABONO"
+    };
+
+    function cekKelulusan() {
+      const nisn = document.getElementById("nisn").value.trim();
+      const hasil = document.getElementById("hasil");
+
+      if (dataSiswa[nisn]) {
+        hasil.innerHTML = `<p>Nama: <strong>${dataSiswa[nisn]}</strong></p>
+                           <p class="success">Status: <strong>LULUS</strong></p>`;
+      } else {
+        hasil.innerHTML = `<p class="error">NISN tidak ditemukan. Periksa kembali NISN Anda.</p>`;
+      }
+    }
+  </script>
+
+</body>
+</html>
